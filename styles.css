@@ -1,0 +1,136 @@
+/* General body styling */
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    color: #333;
+}
+
+/* Container to hold the piano keys */
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+/* Piano key layout */
+.piano {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+}
+
+/* White keys */
+.white-key {
+    width: 60px;
+    height: 250px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    position: relative;
+    border-radius: 4px;
+}
+
+/* White key hover effect */
+.white-key:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Black keys */
+.black-key {
+    width: 40px;
+    height: 180px;
+    background-color: #333;
+    position: absolute;
+    z-index: 1;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+/* Black key hover effect */
+.black-key:hover {
+    background-color: #555;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Spacing between black keys */
+.piano .black-key:nth-child(2),
+.piano .black-key:nth-child(4),
+.piano .black-key:nth-child(6),
+.piano .black-key:nth-child(7),
+.piano .black-key:nth-child(9) {
+    left: 45px;
+}
+
+/* Position adjustments for specific black keys */
+.piano .black-key:nth-child(3) {
+    left: 105px;
+}
+
+.piano .black-key:nth-child(5) {
+    left: 165px;
+}
+
+.piano .black-key:nth-child(8) {
+    left: 225px;
+}
+
+.piano .black-key:nth-child(10) {
+    left: 285px;
+}
+
+/* Active state for both white and black keys */
+.white-key.active, .black-key.active {
+    background-color: #d4d4d4;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Adding subtle animation when the key is clicked */
+.white-key:active, .black-key:active {
+    transform: scale(0.98);
+    box-shadow: none;
+}
+
+/* Styling for a smooth piano interaction */
+.piano {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    position: relative;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .white-key {
+        width: 50px;
+        height: 200px;
+    }
+
+    .black-key {
+        width: 30px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+
+    .piano {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
